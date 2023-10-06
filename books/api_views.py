@@ -5,7 +5,7 @@ from .models import Book
 from django.views.decorators.http import require_http_methods
 from django.contrib.auth.decorators import login_required
 
-@login_required
+# @login_required
 @require_http_methods(["GET", "POST"])
 def list_or_add_books(request):
     if request.method == 'GET':
@@ -36,7 +36,7 @@ def list_or_add_books(request):
         })
 
 
-@login_required
+# @login_required
 @require_http_methods(["GET", "DELETE", "PUT"])
 def show_delete_edit_book(request, id):
     if request.method == 'GET':

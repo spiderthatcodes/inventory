@@ -41,7 +41,7 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return JsonResponse({"username": username, "password": password})
+            return JsonResponse({"username": username})
 
 
 # logout

@@ -20,5 +20,6 @@ class Book(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name='books',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True
     )

@@ -17,7 +17,8 @@ def list_or_add_books(request):
                     "title": book.title,
                     "author": book.author,
                     "status": book.status,
-                    "id": book.id
+                    "id": book.id,
+                    "cover_image": book.cover_image
                 }
             )
         return JsonResponse({
@@ -25,14 +26,15 @@ def list_or_add_books(request):
         })
     else:
         content = json.loads(request.body)
-        user = request.user
-        content["user"] = user
+        # user = request.user
+        # content["user"] = user
         book = Book.objects.create(**content)
         return JsonResponse({
             "title": book.title,
             "author": book.author,
             "status": book.status,
-            "id": book.id
+            "id": book.id,
+            "cover_image": book.cover_image
         })
 
 
